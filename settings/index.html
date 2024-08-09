@@ -1,0 +1,159 @@
+<!-- Document Header Block -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="theme-color" content="#ffffff">
+    <title>Better Lights</title>
+    <link rel="stylesheet" href="css/framework7-bundle.css">
+    <link rel="stylesheet" href="css/framework7-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <script type="text/javascript" src="/homey.js" data-origin="settings"></script>
+</head>
+<body>
+
+<!-- Banner Block -->
+<div style="width:100%; text-align:center;">
+    <img src="https://apps-cdn.athom.com/app/nl.lrvdlinden.DutchFlagDay/4/90ec91b0-7f73-4b9a-a0d5-1fe6832651df/assets/images/large.jpg"
+         alt="Banner" style="max-width:100%;">
+</div>
+
+<!-- Page Content Block -->
+<p class="homey-subtitle" data-i18n="settings.subtitle">
+    <!-- This field will also be translated -->
+</p>
+
+<!-- 
+<div class="title">Information</div>
+<div class="title-large">
+  <div class="title-large-text">Information</div>
+</div>
+<div class="right">
+  <a href="#" class="link icon-only switch-theme">
+    <i class="icon f7-icons">moon_stars</i>
+  </a>
+  <a href="/notifications/" class="link icon-only">
+    <i class="icon f7-icons">
+      bell
+      <span class="badge bg-color-primary">5</span>
+    </i>
+  </a>
+</div>
+-->
+
+<!-- Information Block -->
+<div class="page-content">
+        <div class="light-gray-title">General</div>
+        <div class="list links-list colored-icons-list settings-list list-outline list-dividers full-width">
+            <ul>
+                <li>
+                    <a href="https://homey.app/a/nl.lrvdlinden.DutchFlagDay/test" class="tab-link external" target="_blank">
+                      <div class="colored-icon gray">
+                        <i class="fa-solid fa-gear"></i>
+                    </div>
+                      Version
+                      <div class="item-after">v1.0.5</div>
+                    </a>
+                  </li>
+        <li>
+            <a href="https://community.homey.app/t/app-pro-dutch-flagdays/94118" class="tab-link external" target="_blank">
+                <div class="colored-icon orange">
+                    <i class="fa-solid fa-rotate"></i>
+                </div>
+                Changelog
+            </a>
+        </li>
+        <li>
+            <a href="https://homey.app/a/nl.lrvdlinden.DutchFlagDay/test" class="tab-link external" target="_blank">
+                <div class="colored-icon purple">
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                Rate This App
+            </a>
+        </li>
+        <li>
+            <a href="https://community.homey.app/t/app-pro-dutch-flagdays/94118" class="tab-link external" target="_blank">
+                <div class="colored-icon green">
+                    <i class="fa-solid fa-comments"></i>
+                </div>
+                Forum
+            </a>
+        </li>
+    </ul>
+</div>
+
+<!-- Developers Block -->
+<div class="light-gray-title">Developer</div>
+<div class="list list-with-icons list-outline list-dividers full-width">
+    <ul>
+        <li>
+            <a href="https://lrvdlinden.app" class="item-link item-content external" target="_blank">
+                <div class="item-media"><img src="img/devs/leon.jpg" alt=""></div>
+                <div class="item-inner">
+                    <div class="item-title">Léon van der Linden
+                        <i class="icon f7-icons verified-badge" style="color: #2096f3; background-color: #00000000">checkmark_seal_fill</i>
+                    </div>
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+
+<!-- Footer Block -->
+<footer style="margin-top: 20px;">
+    <div class="light-gray-title">Made with
+    <svg viewBox="0 0 1792 1792" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" style="height: 0.8rem;">
+        <path d="M896 1664q-26 0-44-18l-624-602q-10-8-27.5-26T145 952.5 77 855 23.5 734 0 596q0-220 127-344t351-124q62 0 126.5 21.5t120 58T820 276t76 68q36-36 76-68t95.5-68.5 120-58T1314 128q224 0 351 124t127 344q0 221-229 450l-623 600q-18 18-44 18z" fill="#F35700"></path>
+    </svg> 
+    in <a href="https://www.google.com/maps/dir/Apeldoorn" target="_blank" class="custom-link-reverse">Apeldoorn</a>
+</footer>
+</div>
+<!-- Document Footer Block -->
+<script src="js/framework7-bundle.js"></script>
+<script defer src="fontawesome/js/brands.js"></script>
+<script defer src="fontawesome/js/light.js"></script>
+<script defer src="fontawesome/js/regular.js"></script>
+<script defer src="fontawesome/js/solid.js"></script>
+<script defer src="fontawesome/js/fontawesome.js"></script>
+<script type="text/javascript">
+    function onHomeyReady(Homey) {
+
+        Homey.ready();
+    }
+</script>
+<script>
+    // Controleer of de dark mode is ingeschakeld
+    const darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const isDarkMode = darkModeMediaQuery.matches;
+  
+    // Selecteer het body-element
+    const body = document.body;
+  
+    // Functie om dark mode aan of uit te schakelen
+    function toggleDarkMode() {
+      body.classList.toggle('dark');
+      // Toggle ook de class voor het pictogram
+      const checkmarkIcon = document.getElementById('checkmarkIcon');
+      if (body.classList.contains('dark')) {
+        checkmarkIcon.style.backgroundColor = '#00000000'; // Set background color to black in dark mode
+      } else {
+        checkmarkIcon.style.backgroundColor = '#00000000'; // Set background color to white when dark mode is off
+      }
+    }
+  
+    // Update de achtergrondkleur voor dark mode
+    if (isDarkMode) {
+      body.classList.add('dark');
+      // Voeg ook de dark class toe aan het pictogram als de dark mode standaard is ingeschakeld
+      const checkmarkIcon = document.getElementById('checkmarkIcon');
+      checkmarkIcon.style.backgroundColor = '#00000000'; // Set initial background color to black in dark mode
+    }
+  </script>
+</body>
+</html>

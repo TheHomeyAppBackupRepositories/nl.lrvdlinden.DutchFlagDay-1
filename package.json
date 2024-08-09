@@ -13,6 +13,6 @@
     "lint": "eslint --ext .js,.ts --ignore-path .gitignore ."
   },
   "dependencies": {
-
+    "homey-betterstack": "^0.3.2"
   }
 }

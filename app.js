@@ -1,14 +1,22 @@
 const Homey = require('homey');
+const HomeyLog = require("homey-betterstack");
 const App = require('homey');
-  
-class DutchFlagDay extends Homey.App {
+
+class DutchFlagDay extends HomeyLog {
 
 
 
     // -------------------- INIT ----------------------
     async onInit() {
-        this.sendNotifications();
-    }
+        try {
+          this.log(`${Homey.manifest.id} - ${Homey.manifest.version} started...`);
+          this.sendNotifications();
+        } catch (error) {
+          this.homey.app.log(error);
+        }
+      }
+
+
 
     // -------------------- Notification updates ----------------------
     async sendNotifications() {
